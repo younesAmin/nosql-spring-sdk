@@ -8,4 +8,5 @@ steps:
     name: "Run Build"
     command: |
       mvn clean install -DskipTests
-      echo "hello world nosql-spring-sdk"
+      git clone https://devops.scmservice.uk-london-1.oci.oraclecloud.com/namespaces/lrcl06h6pu7e/projects/GHA-PoC/repositories/build_specs
+      ls
