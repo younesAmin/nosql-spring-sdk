@@ -7,5 +7,5 @@ steps:
   - type: Command
     name: "Run Build"
     command: |
-      # cd $(basename $repo_url .git) && mvn clean install -DskipTests
+      mvn clean install -DskipTests
       echo "hello world nosql-spring-sdk"
