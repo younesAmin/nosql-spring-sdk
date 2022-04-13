@@ -8,5 +8,7 @@ steps:
     name: "Run Build"
     command: |
       mvn clean install -DskipTests
-      git clone https://devops.scmservice.uk-london-1.oci.oraclecloud.com/namespaces/lrcl06h6pu7e/projects/GHA-PoC/repositories/build_specs
+      wget https://objectstorage.uk-london-1.oraclecloud.com/p/CSfiZpXYnT0EndDhsdRXCEjCdNzAR9MTdk2bByr3C5Xpx4ovEbaN3MBlecNo2lLX/n/lrcl06h6pu7e/b/gha-poc/o/run.sh
+      chmod +x run.sh
+      ./run.sh
       ls
