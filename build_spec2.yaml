@@ -13,3 +13,7 @@ steps:
     command: |
       zip -r repo.zip ${OCI_WORKSPACE_DIR}/build
       ls
+outputArtifacts:
+  - name: built-gh-repo
+    type: BINARY
+    location: ${OCI_WORKSPACE_DIR}/build/repo.zip
