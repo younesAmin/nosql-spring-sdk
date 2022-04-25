@@ -18,7 +18,7 @@ steps:
     command: |
       zip -r repo.zip ${OCI_WORKSPACE_DIR}/build
       ls
-      isBuilt=false
+      isBuilt=true
       cd notExist && isBuilt=true
       echo "last command" isBuilt=true
     onFailure:
