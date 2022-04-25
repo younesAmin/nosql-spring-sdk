@@ -7,13 +7,15 @@ steps:
   - type: Command
     name: "Run Build"
     command: |
-      mvn clean install -DskipTests
+      # mvn clean install -DskipTests
+      echo "first step"
   - type: Command
     name: "zip the repo"
     command: |
       zip -r repo.zip ${OCI_WORKSPACE_DIR}/build
       ls
       cd notExist
+      echo "last command"
     onFailure:
       - type: Command
         timeoutInSeconds: 400
@@ -23,6 +25,10 @@ steps:
           build_result=FAILURE
           echo "Failure successfully handled"
         timeoutInSeconds: 400
+  - type: Command
+    name: "After fail"
+    command: |
+      echo "last step"
 outputArtifacts:
   - name: built-gh-repo
     type: BINARY
