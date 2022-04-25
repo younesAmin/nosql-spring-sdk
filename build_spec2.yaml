@@ -11,30 +11,13 @@ steps:
   - type: Command
     name: "Run Build"
     command: |
-      # mvn clean install -DskipTests
-      echo "first step"
+      isBuilt=false
+      mvn clean install -DskipTests && isBuilt=true
+      echo "Build Completed"
   - type: Command
     name: "zip the repo"
     command: |
       zip -r repo.zip ${OCI_WORKSPACE_DIR}/build
-      ls
-      isBuilt=false
-      cd notExist && isBuilt=true
-      echo "last command" && isBuilt=true
-    onFailure:
-      - type: Command
-        timeoutInSeconds: 400
-        shell: /bin/sh
-        command: |
-          echo "Handling Failure"
-          build_result=FAILURE
-          echo "Failure successfully handled"
-        timeoutInSeconds: 400
-  - type: Command
-    name: "After fail"
-    command: |
-      echo "last step"
-      echo $isBuilt
 outputArtifacts:
   - name: built-gh-repo
     type: BINARY
