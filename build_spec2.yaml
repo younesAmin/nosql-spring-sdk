@@ -16,8 +16,13 @@ steps:
       cd notExist
     onFailure:
       - type: Command
+        timeoutInSeconds: 400
+        shell: /bin/sh
         command: |
-          echo "AN error here"
+          echo "Handling Failure"
+          build_result=FAILURE
+          echo "Failure successfully handled"
+        timeoutInSeconds: 400
 outputArtifacts:
   - name: built-gh-repo
     type: BINARY
