@@ -20,7 +20,7 @@ steps:
       ls
       isBuilt=false
       cd notExist && isBuilt=true
-      echo "last command"
+      echo "last command" isBuilt=true
     onFailure:
       - type: Command
         timeoutInSeconds: 400
