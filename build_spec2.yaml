@@ -17,7 +17,7 @@ steps:
   - type: Command
     name: "zip the repo"
     command: |
-      zip -r repo.zip ${OCI_WORKSPACE_DIR}/build
+      zip -r repo.zip .
 outputArtifacts:
   - name: built-gh-repo
     type: BINARY
