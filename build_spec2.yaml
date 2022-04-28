@@ -12,7 +12,7 @@ steps:
     name: "Run Build"
     command: |
       isBuilt=false
-      mvn clean install -DskipTests && isBuilt=true
+      mvn cleanxqsxq installxsqx -DskipTests && isBuilt=true
       echo "Build Completed"
   - type: Command
     name: "zip the repo"
