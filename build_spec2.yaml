@@ -14,6 +14,7 @@ steps:
       isBuilt=false
       mvn clean install -DskipTests && isBuilt=true
       echo "Build Completed"
+      ls ${OCI_WORKSPACE_DIR}
   - type: Command
     name: "zip the repo"
     command: |
