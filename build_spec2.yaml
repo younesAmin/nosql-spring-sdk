@@ -3,23 +3,13 @@ component: build
 timeoutInSeconds: 1000
 shell: bash
 
-env:
-  exportedVariables:
-    - isBuilt
-
 steps:
   - type: Command
-    name: "Run Build"
+    name: "compress the repo"
     command: |
-      isBuilt=false
-      mvn clean install -DskipTests && isBuilt=true
-      echo "Build Completed"
-      ls ${OCI_WORKSPACE_DIR}
-  - type: Command
-    name: "zip the repo"
-    command: |
-      zip -r repo.zip .
+      tar -cvzf repo.tgz ./
+      ls
 outputArtifacts:
   - name: built-gh-repo
     type: BINARY
-    location: ${OCI_WORKSPACE_DIR}/build/repo.zip
+    location: ${OCI_WORKSPACE_DIR}/build/repo.tgz
