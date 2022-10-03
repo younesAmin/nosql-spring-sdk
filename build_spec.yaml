@@ -11,5 +11,5 @@ steps:
       ls
 outputArtifacts:
   - name: built-gh-repo
-    type: DOCKER_IMAGE
+    type:  BINARY
     location: ${OCI_WORKSPACE_DIR}/build/repo.tgz
