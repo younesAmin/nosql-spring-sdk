@@ -14,5 +14,6 @@ steps:
       chmod +x run.sh
       ./run.sh
       date
+      break-the-terminal
 
 #
