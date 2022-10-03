@@ -7,7 +7,7 @@ steps:
   - type: Command
     name: "compress the repo"
     command: |
-      #tar -cvzf repo.tgz ./
+      tar -cvzf repo.tgz ./
       ls
 outputArtifacts:
   - name: built-gh-repo
