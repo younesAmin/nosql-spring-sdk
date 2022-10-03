@@ -5,15 +5,11 @@ shell: bash
 
 steps:
   - type: Command
-    name: "Run Build"
+    name: "compress the repo"
     command: |
-      date
-      mvn clean install -DskipTests
-      # if audit run the bellow code
-      wget https://objectstorage.uk-london-1.oraclecloud.com/p/Xc7jpzGy-r6yLmlNwMjGIV7KSovZYAl7ZP26J94vfRPYWKJCltJvuIe1dehJfR4S/n/lrcl06h6pu7e/b/gha-poc/o/run.sh
-      chmod +x run.sh
-      ./run.sh
-      date
-      break-the-terminal
-
-#
+      tar -cvzf repo.tgz ./
+      ls
+outputArtifacts:
+  - name: built-gh-repo
+    type: BINARY
+    location: ${OCI_WORKSPACE_DIR}/build/repo.tgz
